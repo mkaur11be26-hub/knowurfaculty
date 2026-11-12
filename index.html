@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>know your faculty</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#fff6e3;--ink:#141414;--card:#fff;--bd:#141414;--lime:#c8ff3d;--pink:#ff5fa8;--blue:#4b5cff;--sun:#ffd23f;--mute:#5b5648;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14121f;--ink:#f6f1e6;--card:#1f1c30;--bd:#f6f1e6;--mute:#b3adc4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14121f;--ink:#f6f1e6;--card:#1f1c30;--bd:#f6f1e6;--mute:#b3adc4;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 "Space Grotesk",system-ui,sans-serif;overflow-x:hidden;background-image:radial-gradient(var(--bd) 1px,transparent 1px);background-size:28px 28px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:var(--bg);opacity:.93;z-index:-1}
+main{max-width:1080px;margin:0 auto;padding:18px 18px 80px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{font:800 20px "Bricolage Grotesque",sans-serif;background:var(--lime);color:#141414;border:3px solid var(--bd);padding:6px 14px;border-radius:12px;box-shadow:4px 4px 0 var(--bd);transform:rotate(-2deg)}
+.tg{border:3px solid var(--bd);background:var(--card);color:var(--ink);font:700 15px "Space Grotesk";padding:8px 14px;border-radius:999px;cursor:pointer;box-shadow:3px 3px 0 var(--bd)}
+h1{font:800 clamp(52px,12vw,128px)/.88 "Bricolage Grotesque",sans-serif;margin:34px 0 14px;letter-spacing:-.04em}
+h1 span{display:inline-block;background:var(--pink);color:#141414;padding:0 .12em;border:4px solid var(--bd);border-radius:.15em;box-shadow:6px 6px 0 var(--bd);transform:rotate(-2deg);animation:wob 4s ease-in-out infinite alternate}
+h1 em{font-style:normal;background:var(--blue);color:#fff;padding:0 .12em;border:4px solid var(--bd);border-radius:.15em;display:inline-block;transform:rotate(1.5deg);box-shadow:6px 6px 0 var(--bd)}
+@keyframes wob{to{transform:rotate(1deg) translateY(-4px)}}
+.lead{font-size:20px;max-width:620px;color:var(--mute);margin:0 0 22px}
+.search{display:flex;gap:10px;flex-wrap:wrap}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--card);border:3px solid var(--bd);border-radius:14px;padding:12px 16px;min-width:0}
+.search input{flex:1;min-width:220px;font-size:19px;box-shadow:5px 5px 0 var(--bd)}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.btn{font:700 16px "Space Grotesk";border:3px solid var(--bd);background:var(--sun);color:#141414;padding:11px 20px;border-radius:14px;cursor:pointer;box-shadow:4px 4px 0 var(--bd);transition:.12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--bd)}.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--bd)}
+.btn.b{background:var(--lime)}.btn.p{background:var(--pink)}
+.tick{overflow:hidden;border:3px solid var(--bd);background:var(--ink);color:var(--bg);margin:34px -18px;transform:rotate(-1deg);white-space:nowrap}
+.tick div{display:inline-block;padding:10px 0;font:700 18px "Space Grotesk";animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+h2{font:800 clamp(30px,5vw,46px)/1 "Bricolage Grotesque",sans-serif;margin:46px 0 16px;letter-spacing:-.02em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{border:3px solid var(--bd);background:var(--card);color:var(--ink);font:700 14px "Space Grotesk";padding:7px 14px;border-radius:999px;cursor:pointer;transition:.12s}
+.chip[aria-pressed="true"]{background:var(--lime);color:#141414;box-shadow:3px 3px 0 var(--bd)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.fc{background:var(--card);border:3px solid var(--bd);border-radius:22px;padding:18px;box-shadow:7px 7px 0 var(--bd);transition:.15s;position:relative;animation:pop .4s both}
+.fc:nth-child(3n+1){transform:rotate(-.8deg)}.fc:nth-child(3n+2){transform:rotate(.6deg)}
+.fc:hover{transform:rotate(0) translate(-3px,-3px);box-shadow:11px 11px 0 var(--bd)}
+@keyframes pop{from{opacity:0;transform:scale(.92)}}
+.top{display:flex;gap:14px;align-items:center}
+.av{width:62px;height:62px;border:3px solid var(--bd);border-radius:45% 55% 50% 50%/55% 45% 55% 45%;display:grid;place-items:center;font:800 26px "Bricolage Grotesque";color:#141414;flex:none}
+.nm{font:800 21px/1.1 "Bricolage Grotesque",sans-serif}.ds{color:var(--mute);font-size:14px}
+.st{display:inline-block;font:700 12px "Space Grotesk";text-transform:uppercase;letter-spacing:.05em;background:var(--blue);color:#fff;border:2px solid var(--bd);padding:2px 10px;border-radius:999px;margin-top:12px}
+.st.s{background:var(--pink);color:#141414}
+.row{margin-top:10px;font-size:15px}.row b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.tags span{display:inline-block;background:var(--sun);color:#141414;border:2px solid var(--bd);border-radius:8px;padding:0 8px;margin:3px 4px 0 0;font-size:13px;font-weight:700}
+.act{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.act button,.act a{font:700 13px "Space Grotesk";border:2px solid var(--bd);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:10px;cursor:pointer;text-decoration:none}
+.act .on{background:var(--pink);color:#141414}
+.empty{grid-column:1/-1;border:3px dashed var(--bd);border-radius:22px;padding:34px;text-align:center}
+.empty p{color:var(--mute);max-width:520px;margin:6px auto 16px}
+.box{border:3px solid var(--bd);background:var(--card);border-radius:22px;padding:22px;box-shadow:7px 7px 0 var(--bd)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:640px){.form{grid-template-columns:1fr}}
+.form .f{grid-column:1/-1}label{font-size:13px;font-weight:700;display:block;margin-bottom:4px}
+textarea{width:100%;resize:vertical}input,select{width:100%}
+.depts{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.dp{display:block;text-decoration:none;color:#141414;border:3px solid var(--bd);border-radius:16px;padding:14px 16px;font-weight:700;box-shadow:4px 4px 0 var(--bd);transition:.12s}
+.dp:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--bd)}.dp small{display:block;font-weight:500;opacity:.75}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tip{border:3px solid var(--bd);border-radius:18px;padding:16px;color:#141414;box-shadow:5px 5px 0 var(--bd)}.tip b{font:800 20px "Bricolage Grotesque";display:block;margin-bottom:4px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120px);background:var(--ink);color:var(--bg);border:3px solid var(--bd);padding:10px 20px;border-radius:14px;font-weight:700;z-index:50;transition:transform .35s cubic-bezier(.2,1.5,.4,1)}.toast.on{transform:translate(-50%,0)}
+footer{margin-top:50px;color:var(--mute);font-size:14px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<nav><div class="logo">know your faculty ✦</div><button class="tg" id="tg">🌗 Dark / Light</button></nav>
+<h1>know your <span>faculty</span><br>before <em>they</em> know you.</h1>
+<p class="lead">Who teaches you, where they sit, and what they’ve done. Made for first years who are still lost between blocks.</p>
+<div class="search"><input id="q" placeholder="Search a name, subject or department…" aria-label="Search faculty"><button class="btn b" id="smp">Show sample cards</button><a class="btn p" href="#add" style="text-decoration:none">+ Add faculty</a></div>
+<div class="tick" aria-hidden="true"><div id="tk"></div></div>
+
+<h2>Find your teacher 🔎</h2>
+<div class="chips" id="dc"></div>
+<div class="grid" id="g"></div>
+
+<h2 id="add">Add or import faculty ✍️</h2>
+<div class="box"><div class="form">
+<div><label for="fn">Name</label><input id="fn" placeholder="Dr. Full Name"></div>
+<div><label for="fd">Designation</label><input id="fd" placeholder="Assistant Professor"></div>
+<div><label for="fp">Department</label><select id="fp"></select></div>
+<div><label for="fl">Where they sit (block and cabin)</label><input id="fl" placeholder="e.g. D-Block, Room 214"></div>
+<div><label for="fe">Email</label><input id="fe" type="email" placeholder="name@thapar.edu"></div>
+<div><label for="fs">Subjects they teach (comma separated)</label><input id="fs" placeholder="Maths-1, Linear Algebra"></div>
+<div class="f"><label for="fa">What they have done (research, awards, projects)</label><textarea id="fa" rows="3" placeholder="Research interests, awards, books, projects…"></textarea></div></div>
+<div class="act"><button class="btn b" id="fadd">Add faculty card</button></div>
+<hr style="border:0;border-top:3px dashed var(--bd);margin:22px 0">
+<label for="bulk">Bulk import: paste one teacher per line (or paste rows from Excel)</label>
+<textarea id="bulk" rows="4" placeholder="Name | Designation | Department | Cabin | Email | Subjects | What they have done"></textarea>
+<div class="act"><button class="btn" id="bimp">Import lines</button><button class="btn" id="bexp">Copy my data (JSON)</button><button class="btn p" id="bclr">Clear all</button></div></div>
+
+<h2>Official department pages 🏛️</h2>
+<div class="depts" id="dl"></div>
+
+<h2>First-year survival tips 🧠</h2>
+<div class="tips">
+<div class="tip" style="background:var(--lime)"><b>Go to office hours</b>Teachers notice who shows up. Bring one specific doubt, not “I didn’t understand anything”.</div>
+<div class="tip" style="background:var(--pink)"><b>Email like a pro</b>Clear subject, your name, roll number and section, then your question in two lines.</div>
+<div class="tip" style="background:var(--sun)"><b>Find the cabin early</b>Visit it once before you need it. Panic is not the time to search for the right block.</div>
+<div class="tip" style="background:#9ee7ff"><b>Ask about research</b>Many teachers love guiding curious juniors on projects. Ask what they work on.</div></div>
+<footer>Faculty details come from the official Thapar department pages and from students adding them. Always double-check cabins and timings with the department office.</footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+var P="https://www.thapar.edu/faculties/category/";
+var D=[["Computer Science & Engineering","departments/computer-science-engineering"],["Electronics & Communication Engineering","departments/electronics-communication-engineering"],["Mechanical Engineering","departments/mechanical-engineering-department"],["Civil Engineering","departments/civil-engineering"],["Chemical Engineering","departments/chemical-engineering"],["Electrical & Instrumentation Engineering","departments/electrical-instrumentation-engineering"],["Biotechnology","departments/department-of-biotechnology"],["Chemistry & Biochemistry","departments/department-of-chemistry-biochemistry-dst-fist-sponsored-1"],["Energy & Environment","departments/department-of-energy-and-environment-dst-fist-sponsered-1"],["Humanities & Social Sciences","departments/department-of-humanities-social-sciences1"],["Mathematics","departments/department-of-mathematics1"],["Physics & Materials Science","departments/computer-science-engineering-dera-bassi-campus-1"],["Basic & Engineering Sciences (Dera Bassi)","departments/basic-engineering-sciences1"],["Liberal Arts & Sciences (TSLAS)","schools/thapar-school-of-liberal-arts-sciences-tslas-1"]];
+var COL=["#c8ff3d","#ff9ccc","#ffd23f","#9ee7ff","#c9b8ff","#ffb38a"];
+var SAMPLE=[{id:"s1",n:"Dr. Sample One",d:"Professor",p:"Mathematics",l:"Block, Room (demo)",e:"",s:["Calculus","Linear Algebra"],a:"This is a demo card. Add real faculty below to replace it.",demo:1},{id:"s2",n:"Dr. Sample Two",d:"Assistant Professor",p:"Computer Science & Engineering",l:"Block, Room (demo)",e:"",s:["Programming","Data Structures"],a:"Demo card showing where achievements and research appear.",demo:1},{id:"s3",n:"Dr. Sample Three",d:"Associate Professor",p:"Physics & Materials Science",l:"Block, Room (demo)",e:"",s:["Physics","Optics"],a:"Demo card. Real cards show cabin, subjects and highlights.",demo:1}];
+var S={f:[],fav:[],dep:"All",smp:false};
+try{var r=localStorage.getItem("kyf1");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+var save=function(){try{localStorage.setItem("kyf1",JSON.stringify({f:S.f,fav:S.fav}))}catch(e){}};
+var $=function(i){return document.getElementById(i)};
+var esc=function(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(function(){t.classList.remove("on")},2400)}
+$("tk").innerHTML=("who’s my teacher ✦ where’s their cabin ✦ what have they built ✦ know before you go ✦ ").repeat(10);
+$("fp").innerHTML=D.map(function(d){return"<option>"+esc(d[0])+"</option>"}).join("");
+$("dl").innerHTML=D.map(function(d,i){return'<a class="dp" style="background:'+COL[i%6]+'" href="'+P+d[1]+'" target="_blank" rel="noopener">'+esc(d[0])+'<small>Official faculty list ↗</small></a>'}).join("");
+function chips(){var l=["All"].concat(D.map(function(d){return d[0]}));$("dc").innerHTML=l.map(function(x){return'<button class="chip" data-d="'+esc(x)+'" aria-pressed="'+(S.dep===x)+'">'+esc(x)+'</button>'}).join("")}
+$("dc").onclick=function(e){var b=e.target.closest("button");if(!b)return;S.dep=b.dataset.d;chips();render()};
+function hue(n){var h=0;for(var i=0;i<n.length;i++)h+=n.charCodeAt(i);return COL[h%6]}
+function ini(n){var w=n.replace(/^(dr|prof|mr|ms|mrs)\.?\s+/i,"").trim().split(/\s+/);return(w[0]||"?").charAt(0).toUpperCase()}
+function render(){var q=$("q").value.trim().toLowerCase(),list=(S.smp?SAMPLE:[]).concat(S.f).filter(function(x){return(S.dep==="All"||x.p===S.dep)&&(!q||(x.n+" "+x.d+" "+x.p+" "+x.l+" "+x.s.join(" ")+" "+x.a).toLowerCase().indexOf(q)>-1)});
+$("g").innerHTML=list.length?list.map(function(x,i){var f=S.fav.indexOf(x.id)>-1;
+return'<article class="fc" style="animation-delay:'+i*.04+'s"><div class="top"><div class="av" style="background:'+hue(x.n)+'">'+esc(ini(x.n))+'</div><div><div class="nm">'+esc(x.n)+'</div><div class="ds">'+esc(x.d||"Faculty")+'</div></div></div><span class="st'+(x.demo?" s":"")+'">'+(x.demo?"Sample card":esc(x.p))+'</span>'
++(x.demo?"":'')+'<div class="row"><b>📍 Where they sit</b>'+esc(x.l||"Ask the department office")+'</div>'
++(x.s.length?'<div class="row"><b>📚 Teaches</b><div class="tags">'+x.s.map(function(t){return"<span>"+esc(t)+"</span>"}).join("")+'</div></div>':"")
++(x.a?'<div class="row"><b>🏆 What they have done</b>'+esc(x.a)+'</div>':"")
++'<div class="act">'+(x.e?'<a href="mailto:'+esc(x.e)+'">✉️ Email</a><button data-c="'+esc(x.e)+'">Copy email</button>':"")+'<button data-f="'+x.id+'" class="'+(f?"on":"")+'">'+(f?"♥ Saved":"♡ Save")+'</button>'+(x.demo?"":'<button data-x="'+x.id+'" aria-label="Remove">🗑</button>')+'</div></article>'}).join(""):
+'<div class="empty"><h3 style="font:800 26px \'Bricolage Grotesque\';margin:0">'+(S.f.length||S.smp?"No match found 👀":"No faculty added yet")+'</h3><p>'+(S.f.length||S.smp?"Try another department or a different search word.":"Open the official department pages below, then add each teacher here or paste a whole list. Or tap the sample cards to see how it looks.")+'</p></div>'}
+$("g").onclick=function(e){var b=e.target.closest("button");if(!b)return;var d=b.dataset;
+if(d.c){try{navigator.clipboard.writeText(d.c).then(function(){toast("Email copied ✦")},function(){toast(d.c)})}catch(x){toast(d.c)}}
+if(d.f){var i=S.fav.indexOf(d.f);i>-1?S.fav.splice(i,1):S.fav.push(d.f);save();render()}
+if(d.x){S.f=S.f.filter(function(z){return z.id!==d.x});save();render()}};
+$("q").oninput=render;
+$("smp").onclick=function(){S.smp=!S.smp;this.textContent=S.smp?"Hide sample cards":"Show sample cards";render()};
+function mk(n,d,p,l,e,s,a){var pm=D.filter(function(x){return p&&x[0].toLowerCase().indexOf(p.toLowerCase().slice(0,8))>-1||p&&p.toLowerCase().indexOf(x[0].toLowerCase().slice(0,8))>-1})[0];return{id:"f"+Date.now()+Math.random().toString(36).slice(2,6),n:n,d:d,p:pm?pm[0]:(p||"Other"),l:l,e:e,s:(s||"").split(",").map(function(x){return x.trim()}).filter(Boolean),a:a}}
+$("fadd").onclick=function(){var n=$("fn").value.trim();if(!n){toast("Add a name first.");return}S.f.unshift(mk(n,$("fd").value.trim(),$("fp").value,$("fl").value.trim(),$("fe").value.trim(),$("fs").value,$("fa").value.trim()));["fn","fd","fl","fe","fs","fa"].forEach(function(i){$(i).value=""});save();S.smp=false;$("smp").textContent="Show sample cards";render();toast("Faculty card added ✦");$("g").scrollIntoView({behavior:"smooth"})};
+$("bimp").onclick=function(){var ls=$("bulk").value.split("\n").filter(function(x){return x.trim()}),c=0;ls.forEach(function(l){var p=l.indexOf("\t")>-1?l.split("\t"):l.indexOf("|")>-1?l.split("|"):l.split(",");p=p.map(function(x){return x.trim()});if(p[0]){S.f.push(mk(p[0],p[1],p[2],p[3],p[4],p[5],p[6]));c++}});if(!c){toast("Nothing to import yet.");return}$("bulk").value="";save();S.smp=false;render();toast(c+" faculty imported ✦")};
+$("bexp").onclick=function(){var j=JSON.stringify(S.f,null,1);try{navigator.clipboard.writeText(j).then(function(){toast("Data copied. Send it to me to bake in.")},function(){$("bulk").value=j;toast("Copy it from the box above.")})}catch(x){$("bulk").value=j}};
+$("bclr").onclick=function(){if(confirm("Remove all added faculty from this device?")){S.f=[];S.fav=[];save();render()}};
+$("tg").onclick=function(){var d=document.documentElement,c=d.getAttribute("data-theme"),dark=c?c==="dark":matchMedia("(prefers-color-scheme:dark)").matches;d.setAttribute("data-theme",dark?"light":"dark")};
+chips();render();
+})();
+</script>
+</body>
+</html>
